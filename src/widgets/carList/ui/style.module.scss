@@ -1,0 +1,9 @@
+.root {
+  overflow-y: scroll;
+  width: 300px;
+
+  .card {
+    width: 100px;
+    background-color: bisque;
+  }
+}
