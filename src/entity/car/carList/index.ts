@@ -1,0 +1,11 @@
+export { default as CarListReducer } from './model/carListSlice'
+
+export { fetchCarList } from './model/carListThunks'
+
+export {
+  selectCarList,
+  selectCarListLoading,
+  selectCarListError,
+} from './model/selectors'
+
+export { type ICarListState } from './model/types'
