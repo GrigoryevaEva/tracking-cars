@@ -4,7 +4,7 @@ import { fetchCarList } from './carListThunks';
 
 const initialState: ICarListState = {
   carList: [],
-  status: 'idle',
+  completed: false,
   loading: false,
   error: null
 }
@@ -50,7 +50,7 @@ const carListSlice = createSlice({
       .addCase(fetchCarList.fulfilled, (state, action) => {
         state.carList = action.payload
 
-        state.status = 'fulfilled'
+        state.completed = true
         state.loading = false
         if (state.error) state.error = null
       })

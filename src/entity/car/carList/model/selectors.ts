@@ -12,9 +12,9 @@ export const selectCarList = createSelector(
   (state: ICarListState) => state.carList
 )
 
-export const selectCarListStatus = createSelector(
+export const selectCarListCompleted = createSelector(
   selectBase,
-  (state: ICarListState) => state.status
+  (state: ICarListState) => state.completed
 )
 
 export const selectCarListLoading = createSelector(

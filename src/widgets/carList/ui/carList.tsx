@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, selectCarListStatus, sortCarList } from '../../../entity/car/carList'
+import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, selectCarListCompleted, sortCarList } from '../../../entity/car/carList'
 import { useAppDispatch, useAppSelector } from '../../../shared/lib/redux'
 
 import style from './style.module.scss'
@@ -11,14 +11,15 @@ export const CarList = () => {
   const dispatch = useAppDispatch()
 
   const carList = useAppSelector(selectCarList)
-  const carListStatus = useAppSelector(selectCarListStatus)
+  const carListCompleted = useAppSelector(selectCarListCompleted)
   const carListLoading = useAppSelector(selectCarListLoading)
   const carListError = useAppSelector(selectCarListError)
 
   const sortValue = useAppSelector(selectSortCarListValue)
+  
 
   useEffect(() => {
-    if (carListStatus === 'idle') dispatch(fetchCarList())
+    if (!carListCompleted) dispatch(fetchCarList())
   }, [])
 
   useEffect(() => {
@@ -42,9 +43,16 @@ export const CarList = () => {
     ))
   )
 
+  const renderContent = () => {
+    if (carListLoading) return <p>Загрузка...</p>
+    if (carListError) return <p>{`Ошибка: ${carListError.messageError}`}</p>
+    if (carList.length === 0) return <p>Нет машин</p>
+    return renderCarList()
+  }
+
   return (
     <div className={style.root}>
-      {renderCarList()}
+      {renderContent()}
     </div>
   )
 }
