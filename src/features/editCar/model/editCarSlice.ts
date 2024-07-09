@@ -9,9 +9,7 @@ const editCarSlice = createSlice({
   initialState,
   reducers: {
     toggleChangeStatus: (state) => {
-      if (state.status) {
-        state.status = false
-      } else state.status = true
+      state.status = !state.status
     }
   }
 });
