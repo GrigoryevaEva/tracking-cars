@@ -1,5 +1,10 @@
 export { 
   default as CarListReducer,
+  changeName,
+  changeModel,
+  changePrise,
+  removeState,
+  addEditCar,
 } from './model/carDetailSlice'
 
 export {

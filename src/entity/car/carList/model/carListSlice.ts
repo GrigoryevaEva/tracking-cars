@@ -19,6 +19,13 @@ const carListSlice = createSlice({
         1
       )
     },
+    updateCar: (state, action) => {
+      state.carList.splice(
+        state.carList.findIndex(c => c.id === action.payload.id), 
+        1,
+        action.payload
+      )
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -40,6 +47,7 @@ const carListSlice = createSlice({
 
 export const {
   deleteCar,
+  updateCar
 } = carListSlice.actions
 
 export default carListSlice.reducer

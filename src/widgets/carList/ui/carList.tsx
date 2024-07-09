@@ -24,12 +24,12 @@ export const CarList = () => {
         <div>
           <p>{car.name} {car.model}</p>
           <p>Год выпуска: {car.year}</p>
-          <p>Стоимость: {car.price}</p>
+          <p>Цена: {car.price}</p>
           <p>Цвет: {car.color}</p>
         </div>
         <div>
           <DeleteCar id={car.id} />
-          <ButtonEditCar />
+          <ButtonEditCar car={car}/>
         </div>
       </div>
     ))
