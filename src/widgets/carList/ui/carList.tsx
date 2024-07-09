@@ -3,6 +3,8 @@ import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, 
 import { useAppDispatch, useAppSelector } from '../../../shared/lib/redux'
 
 import style from './style.module.scss'
+import { DeleteCar } from '../../../features/deleteCar'
+import { ButtonEditCar } from '../../../features/editCar'
 
 export const CarList = () => {
   const dispatch = useAppDispatch()
@@ -19,10 +21,16 @@ export const CarList = () => {
   const renderCarList = () => (
     carList.map((car) => (
       <div key={car.id} className={style.card}>
-        <p>{car.name} {car.model}</p>
-        <p>Год выпуска: {car.year}</p>
-        <p>Стоимость: {car.price}</p>
-        <p>Цвет: {car.color}</p>
+        <div>
+          <p>{car.name} {car.model}</p>
+          <p>Год выпуска: {car.year}</p>
+          <p>Стоимость: {car.price}</p>
+          <p>Цвет: {car.color}</p>
+        </div>
+        <div>
+          <DeleteCar id={car.id} />
+          <ButtonEditCar />
+        </div>
       </div>
     ))
   )

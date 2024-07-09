@@ -12,7 +12,14 @@ const initialState: ICarListState = {
 const carListSlice = createSlice({
   name: 'carList',
   initialState,
-  reducers: {},
+  reducers: {
+    deleteCar: (state, action) => {
+      state.carList.splice(
+        state.carList.findIndex(c => c.id === action.payload), 
+        1
+      )
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchCarList.pending, (state) => {
@@ -30,5 +37,9 @@ const carListSlice = createSlice({
         state.error = action.payload ?? null
       })
 });
+
+export const {
+  deleteCar,
+} = carListSlice.actions
 
 export default carListSlice.reducer
