@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 'price-more'
+  value: ''
 }
 
 const sortCarList = createSlice({
@@ -9,9 +9,7 @@ const sortCarList = createSlice({
   initialState,
   reducers: {
     changeValue: (state, action) => {
-      if (action.payload !== state.value) {
-        state.value = action.payload
-      }
+      state.value = action.payload
     }
   }
 });
