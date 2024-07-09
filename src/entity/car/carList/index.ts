@@ -9,7 +9,7 @@ export { fetchCarList } from './model/carListThunks'
 
 export {
   selectCarList,
-  selectCarListStatus,
+  selectCarListCompleted,
   selectCarListLoading,
   selectCarListError,
 } from './model/selectors'
