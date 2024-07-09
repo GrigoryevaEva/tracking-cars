@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import carListReducer from "../entity/car/carList/model/carListSlice";
 
 const rootReducer = combineReducers({
-  carlist: carListReducer,
+  carList: carListReducer,
 })
 
 export const setupStore = () => {
