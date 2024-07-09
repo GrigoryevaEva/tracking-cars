@@ -1,4 +1,4 @@
-const API_URL = 'https://test.tspb.su/test-task'
+import { API_URL } from "../constants";
 
 class Api {
   async get(endpoint: string) {
