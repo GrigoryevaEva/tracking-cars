@@ -4,6 +4,7 @@ export { fetchCarList } from './model/carListThunks'
 
 export {
   selectCarList,
+  selectCarListStatus,
   selectCarListLoading,
   selectCarListError,
 } from './model/selectors'
