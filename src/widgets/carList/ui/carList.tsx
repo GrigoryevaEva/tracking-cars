@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, selectCarListStatus } from '../../../entity/car/carList'
+import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, selectCarListStatus, sortCarList } from '../../../entity/car/carList'
 import { useAppDispatch, useAppSelector } from '../../../shared/lib/redux'
 
 import style from './style.module.scss'
 import { DeleteCar } from '../../../features/deleteCar'
 import { ButtonEditCar } from '../../../features/editCar'
+import { selectSortCarListValue } from '../../../features/sortCarList'
 
 export const CarList = () => {
   const dispatch = useAppDispatch()
@@ -14,9 +15,15 @@ export const CarList = () => {
   const carListLoading = useAppSelector(selectCarListLoading)
   const carListError = useAppSelector(selectCarListError)
 
+  const sortValue = useAppSelector(selectSortCarListValue)
+
   useEffect(() => {
     if (carListStatus === 'idle') dispatch(fetchCarList())
   }, [])
+
+  useEffect(() => {
+    dispatch(sortCarList(sortValue))
+  }, [sortValue])
 
   const renderCarList = () => (
     carList.map((car) => (

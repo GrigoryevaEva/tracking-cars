@@ -1,4 +1,5 @@
 import { ModalEditCar, selectEditCarStatus } from "../../../features/editCar"
+import { SortCarList } from "../../../features/sortCarList"
 import { useAppSelector } from "../../../shared/lib/redux"
 import { CarList } from "../../../widgets/carList"
 import { Header } from "../../../widgets/header"
@@ -13,6 +14,7 @@ export const Home = () => {
     <>
       <Header />
       <main className={style.main}>
+        <SortCarList />
         <CarList />
         <Map />
         

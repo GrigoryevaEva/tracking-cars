@@ -2,6 +2,7 @@ export {
   default as CarListReducer,
   deleteCar,
   updateCar,
+  sortCarList,
 } from './model/carListSlice'
 
 export { fetchCarList } from './model/carListThunks'

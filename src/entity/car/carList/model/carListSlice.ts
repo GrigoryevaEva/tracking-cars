@@ -26,6 +26,20 @@ const carListSlice = createSlice({
         action.payload
       )
     },
+    sortCarList: (state, action) => {
+      if (action.payload === 'price-less') {
+        state.carList.sort((a, b) => a.price - b.price)
+      }
+      if (action.payload === 'price-more') {
+        state.carList.sort((a, b) => b.price - a.price)
+      }
+      if (action.payload === 'year-less') {
+        state.carList.sort((a, b) => a.year - b.year)
+      }
+      if (action.payload === 'year-more') {
+        state.carList.sort((a, b) => b.year - a.year)
+      }
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -35,6 +49,7 @@ const carListSlice = createSlice({
       })
       .addCase(fetchCarList.fulfilled, (state, action) => {
         state.carList = action.payload
+
         state.status = 'fulfilled'
         state.loading = false
         if (state.error) state.error = null
@@ -47,7 +62,8 @@ const carListSlice = createSlice({
 
 export const {
   deleteCar,
-  updateCar
+  updateCar,
+  sortCarList
 } = carListSlice.actions
 
 export default carListSlice.reducer
