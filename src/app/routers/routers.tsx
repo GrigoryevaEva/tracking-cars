@@ -3,6 +3,8 @@ import { createHashRouter, RouterProvider} from 'react-router-dom';
 import { Error } from '../../pages/error';
 import { Home } from '../../pages/home';
 
+import '../style/global.scss'
+
 
 const router = createHashRouter([
   {
