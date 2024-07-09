@@ -18,7 +18,7 @@ const carDetailSlice = createSlice({
   name: 'carDetail',
   initialState,
   reducers: {
-    addEditCar: (state, action) => {
+    selectCar: (state, action) => {
       state.carDetail = action.payload
     },
     changeName: (state, action) => {
@@ -50,7 +50,7 @@ export const {
   changeModel,
   changePrise,
   removeState,
-  addEditCar,
+  selectCar,
 } = carDetailSlice.actions
 
 export default carDetailSlice.reducer

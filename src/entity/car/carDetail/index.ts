@@ -4,7 +4,7 @@ export {
   changeModel,
   changePrise,
   removeState,
-  addEditCar,
+  selectCar,
 } from './model/carDetailSlice'
 
 export {
