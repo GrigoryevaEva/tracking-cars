@@ -1,10 +1,35 @@
+import { useEffect } from 'react'
+import { fetchCarList, selectCarList, selectCarListError, selectCarListLoading, selectCarListStatus } from '../../../entity/car/carList'
+import { useAppDispatch, useAppSelector } from '../../../shared/lib/redux'
 
 import style from './style.module.scss'
 
 export const CarList = () => {
+  const dispatch = useAppDispatch()
+
+  const carList = useAppSelector(selectCarList)
+  const carListStatus = useAppSelector(selectCarListStatus)
+  const carListLoading = useAppSelector(selectCarListLoading)
+  const carListError = useAppSelector(selectCarListError)
+
+  useEffect(() => {
+    if (carListStatus === 'idle') dispatch(fetchCarList())
+  }, [])
+
+  const renderCarList = () => (
+    carList.map((car) => (
+      <div key={car.id} className={style.card}>
+        <p>{car.name} {car.model}</p>
+        <p>Год выпуска: {car.year}</p>
+        <p>Стоимость: {car.price}</p>
+        <p>Цвет: {car.color}</p>
+      </div>
+    ))
+  )
+
   return (
     <div className={style.root}>
-      <div className={style.card}>cardCar</div>
+      {renderCarList()}
     </div>
   )
 }
