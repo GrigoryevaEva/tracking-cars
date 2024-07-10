@@ -7,6 +7,7 @@ Hi! I'm Eva. Thank you for deciding to familiarize yourself with my solution to 
 - [Overview](#overview)
   - [Test task](#test-task)
   - [Screenshot](#screenshot)
+  - [Install](#install)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -53,6 +54,26 @@ Mobile:
     <img src='./screenshots/Mobile-modal.png' width='410px'>
   </div>
 </div>
+
+### Install
+
+You can run this little app locally on your device!
+
+To do this, you only need to take four steps:
+
+1. Clone this repository.
+2. Run the command:
+```
+npm install
+```
+3. Сreate a '.env.local' file in the root of the project and paste the following into it:
+```
+REACT_APP_API_URL=https://test.tspb.su/test-task
+```
+4. Run the command:
+```
+npm start
+```
 
 ## My process
 
