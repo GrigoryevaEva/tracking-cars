@@ -1,6 +1,8 @@
 import { useAppDispatch } from "../../../shared/lib/redux"
 import { changeValue } from "../model/sortCarListSlice"
 
+import style from './style.module.scss'
+
 export const SortCarList = () => {
 
   const dispatch = useAppDispatch()
@@ -10,7 +12,7 @@ export const SortCarList = () => {
   }
 
   return (
-    <div>
+    <div className={style.root}>
       <select onChange={handleChangeSortValue}>
         <option value="">По умолчанию</option>
         <option value="price-more">Дороже</option>

@@ -4,7 +4,7 @@ import { Error } from '../../pages/error';
 import { Home } from '../../pages/home';
 
 import '../style/global.scss'
-
+import '../style/nullification.scss'
 
 const router = createHashRouter([
   {

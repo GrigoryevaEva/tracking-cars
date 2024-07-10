@@ -29,16 +29,20 @@ export const CarList = () => {
   const renderCarList = () => (
     carList.map((car) => (
       <div key={car.id} className={style.card}>
-        <div>
-          <p>{car.name} {car.model}</p>
-          <p>Год выпуска: {car.year}</p>
-          <p>Цена: {car.price}</p>
-          <p>Цвет: {car.color}</p>
+        <div className={`${style.card__colorDecorate} ${style[`${car.color}`]}`}></div>
+        <div className={style.card__info}>
+          <p className={style.card__name}>
+            <span>{car.name} </span>
+            <span>{car.model}</span>
+          </p>
+          <p className={style.card__props}>
+            <span>{car.year}</span>
+            <span>&#183;</span>
+            <span>{car.price}₽</span>
+          </p>
         </div>
-        <div>
-          <DeleteCar id={car.id} />
-          <ButtonEditCar car={car}/>
-        </div>
+        <DeleteCar id={car.id} />
+        <ButtonEditCar car={car}/>
       </div>
     ))
   )

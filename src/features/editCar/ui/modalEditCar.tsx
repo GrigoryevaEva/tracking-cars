@@ -71,7 +71,7 @@ export const ModalEditCar = () => {
 
         <div className={style.form__buttons}>
           <button onClick={handleSubmit}>
-            Изменить
+            Сохранить
           </button>
           <button onClick={handleCancel}>
             Отмена
