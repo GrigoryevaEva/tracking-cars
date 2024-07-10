@@ -32,13 +32,21 @@ P.S. The design of the UI is at your discretion".
 
 ### Screenshot
 
+Desktop:
 <div align="center">
   <img src='./screenshots/Desktop.png'>
   <img src='./screenshots/Desktop-hover.png'>
   <img src='./screenshots/Desktop-modal.png'>
+</div>
+
+Tablet:
+<div align="center">
   <img src='./screenshots/Tablet.png'>
-  <img src='./screenshots/Tablet-hover.png'>
   <img src='./screenshots/Tablet-modal.png'>
+</div>
+
+Mobile:
+<div align="center">
   <div style='display: flex;'>
     <img src='./screenshots/Mobile.png' width='410px'>
     <img src='./screenshots/Mobile-hover.png' width='410px'>
