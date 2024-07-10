@@ -1,0 +1,1 @@
+export { DeleteCar } from "./ui/deleteCar";

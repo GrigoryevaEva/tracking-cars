@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: sort;
+
+  select {
+    font-size: 1rem;
+    padding: 0.625rem;
+    border-radius: 0.188rem;
+
+    background-color: #FFFFFF;
+
+    box-shadow: 0 2px 9px #0000000D;
+    transition: box-shadow 0.2s;
+  }
+}

@@ -1,0 +1,18 @@
+.main {
+  display: grid;
+  grid-template-rows: 3.75rem 1fr 1fr;
+  grid-template-areas:  'sort' 
+                        'list'
+                        'map';
+  gap: 1.25rem;
+  @media (min-width: 800px) {
+    padding-top: 1.25rem;
+
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 3.75rem 1fr;
+    grid-template-areas:  'sort map' 
+                          'list map';
+  }
+
+  position: relative;
+}
